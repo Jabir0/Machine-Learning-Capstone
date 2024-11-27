@@ -1,2 +1,3 @@
-# Machine Learning Repository
-# Capstone Project GIZI
+# Machine Learning Repository GIZI
+## Introduction
+
