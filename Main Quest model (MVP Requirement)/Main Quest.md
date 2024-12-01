@@ -12,7 +12,7 @@ Organisasi Kesehatan Dunia (WHO) telah menetapkan kriteria standar untuk mengkla
 Dalam bagian ini, kami akan menunjukkan distribusi stunting dan wasting berdasarkan data WHO, yang akan memberikan gambaran mengenai prevalensi status gizi pada anak-anak dan ibu hamil.
 
 ## Stunting WHO Chart
-Berikut adalah chart WHO yang menggambarkan **Stunting Pria** dan **Stunting Wanita**. 
+Berikut adalah chart WHO yang menggambarkan **Stunting Pria** dan **Stunting Wanita** Berdasarkan standar WHO. 
 
 <div style="text-align: center;">
     <h3>Stunting WHO Chart</h3>
@@ -20,14 +20,15 @@ Berikut adalah chart WHO yang menggambarkan **Stunting Pria** dan **Stunting Wan
 
 <div style="display: flex; justify-content: space-between;">
 
-  <div style="text-align: center;">
+  <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Stunting Pria</h4>
-    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting Pria" style="width: 45%;"/>
+    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting Pria" style="width: 100%;"/>
   </div>
 
-  <div style="text-align: center;">
+  <div style="flex: 1; padding-left: 10px; text-align: center;">
     <h4>Stunting Wanita</h4>
-    <img src="./images/chartWHO/stunting_wanita.jpg" alt="Stunting Wanita" style="width: 45%;"/>
+    <img src="./images/chartWHO/stunting_wanita.jpg" alt="Stunting Wanita" style="width: 100%;"/>
   </div>
 
 </div>
+
