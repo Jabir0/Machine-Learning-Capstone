@@ -21,8 +21,14 @@ Stunting adalah masalah gizi jangka panjang yang dapat memengaruhi perkembangan 
 </div>
 
 <div style="text-align: center;">
-    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting" style="width: 100%;"/>
+    <h4>Stunting Pria</h4>
+    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting Pria" style="width: 100%;"/>
 </div>
+
+<div style="flex: 1; padding-right: 10px; text-align: center;">
+    <h4>Stunting Wanita</h4>
+    <img src="./images/chartWHO/stunting_wanita.jpg" alt="Stunting Wanita" style="width: 100%;"/>
+  </div>
 
 ---
 
@@ -75,4 +81,3 @@ Di bawah ini adalah **distribusi dataset wasting** yang menunjukkan sebaran kela
 <div style="text-align: center;">
     <img src="./images/datasetdistribution/distribusi_wasting.png" alt="Distribusi Kelas Wasting" style="width: 80%;"/>
 </div>
-
