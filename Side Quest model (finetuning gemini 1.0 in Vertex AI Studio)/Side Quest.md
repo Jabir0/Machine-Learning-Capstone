@@ -9,11 +9,11 @@ Kami mengkritisi platform konsultasi dokter yang sering memerlukan waktu terlalu
 <div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Pasien Bertanya</h4>
-    <img src="images\waktu_pasien_bertanya.png" alt="Pasien bertanya" style="width: 100%;"/>
+    <img src="images\waktu_pasien_bertanya.png" alt="Pasien bertanya" style="width: 50%;"/>
   </div>
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Dokter Menjawab</h4>
-    <img src="images\waktu_dokter_menjawab.png" alt="Dokter Menjawab" style="width: 100%;"/>
+    <img src="images\waktu_dokter_menjawab.png" alt="Dokter Menjawab" style="width: 50%;"/>
   </div>
 </div>
 
