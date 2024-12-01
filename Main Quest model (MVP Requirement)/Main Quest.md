@@ -12,7 +12,7 @@ Organisasi Kesehatan Dunia (WHO) telah menetapkan kriteria standar untuk mengkla
 Dalam bagian ini, kami akan menunjukkan distribusi stunting dan wasting berdasarkan data WHO, yang akan memberikan gambaran mengenai prevalensi status gizi pada anak-anak dan ibu hamil.
 
 ## Stunting WHO Chart
-Berikut adalah chart yang menggambarkan **Stunting Pria** dan **Stunting Wanita** Berdasarkan standar WHO. 
+Stunting adalah masalah gizi jangka panjang yang dapat memengaruhi perkembangan anak. Di bawah ini adalah **chart WHO** yang menggambarkan **Stunting Pria** dan **Stunting Wanita**, berdasarkan standar pertumbuhan **WHO**.
 
 <div style="text-align: center;">
     <h3>Stunting WHO Chart</h3>
@@ -32,3 +32,23 @@ Berikut adalah chart yang menggambarkan **Stunting Pria** dan **Stunting Wanita*
 
 </div>
 
+## Wasting WHO Chart
+Wasting sendiri adalah masalah kesehatan akut yang terjadi ketika anak kekurangan berat badan yang signifikan. Ini biasanya terjadi akibat malnutrisi yang parah dalam jangka pendek. Berikut adalah **chart WHO** yang menggambarkan **Wasting Pria** dan **Wasting Wanita**, juga berdasarkan standar **WHO**.
+
+<div style="text-align: center;">
+    <h3>Stunting WHO Chart</h3>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+
+  <div style="flex: 1; padding-right: 10px; text-align: center;">
+    <h4>Wasting Pria</h4>
+    <img src="./images/chartWHO/wasting_pria.jpg" alt="Stunting Pria" style="width: 100%;"/>
+  </div>
+
+  <div style="flex: 1; padding-left: 10px; text-align: center;">
+    <h4>Wasting Wanita</h4>
+    <img src="./images/chartWHO/wasting_wanita.jpg" alt="Stunting Wanita" style="width: 100%;"/>
+  </div>
+
+</div>
