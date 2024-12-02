@@ -106,3 +106,74 @@ Grafik berikut menunjukkan sebaran kelas wasting dalam dataset, menggambarkan pr
 </div>
 
 ---
+
+# Maternal Health Risk
+
+### Pendahuluan
+Model deteksi risiko kesehatan kehamilan ini dirancang untuk membantu mengidentifikasi kondisi medis yang berisiko pada ibu hamil, seperti hipertensi, diabetes, dan masalah jantung. Tujuan model ini adalah untuk mendeteksi secara dini potensi masalah kesehatan selama kehamilan dan memberikan solusi berbasis data untuk mengurangi risiko bagi ibu dan bayi.
+
+### Alasan Kami Memilih Fitur Ini dan Menggunakan Model Ini
+Kami memilih fitur ini karena banyak ibu hamil yang tidak menyadari adanya potensi risiko kesehatan yang dapat membahayakan diri mereka dan bayi. Deteksi dini terhadap kondisi seperti hipertensi dan masalah gula darah dapat mengurangi angka kematian ibu dan bayi. Model ini bertujuan untuk memberikan alat prediksi yang sederhana namun berbasis data bagi ibu hamil.
+
+### Persiapan Dataset
+Dataset ini berisi data medis ibu hamil dengan fitur-fitur seperti usia, tekanan darah, kadar gula darah, suhu tubuh, detak jantung, dan level risiko kehamilan. Data ini digunakan untuk melatih model dalam memprediksi risiko kehamilan berdasarkan indikator medis.
+
+### Detail Dataset
+Dataset **Maternal Health Risk** terdiri dari 1014 entri dengan 7 kolom utama:
+- **Age**: Usia ibu hamil.
+- **SystolicBP**: Tekanan darah sistolik.
+- **DiastolicBP**: Tekanan darah diastolik.
+- **BS**: Level gula darah.
+- **BodyTemp**: Suhu tubuh.
+- **HeartRate**: Denyut jantung.
+- **RiskLevel**: Level risiko kehamilan (High risk, Low risk, Mid risk).
+
+### Credit Dataset
+Dataset ini berasal dari [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/863/maternal+health+risk). Terima kasih kepada penyedia dataset yang memungkinkan pengembangan model ini.
+
+### Distribusi Kelas
+Dataset ini memiliki tiga kategori dalam **RiskLevel**:
+- **High risk**: Risiko tinggi.
+- **Low risk**: Risiko rendah.
+- **Mid risk**: Risiko menengah.
+
+Berikut adalah distribusi kelas pada dataset ini:
+
+<div style="text-align: center;">
+    <h3>Distribusi Kelas Maternal Health Risk</h3>
+</div>
+
+<div style="text-align: center;">
+    <img src="./images/datasetdistribution/distribusi_maternal_health_risk.png" alt="Distribusi maternal health risk" style="width: 80%;"/>
+</div>
+
+---
+
+# Hasil Model pada APK
+
+Setelah model disimpan dalam format TensorFlow Lite (TFLite), model diintegrasikan ke dalam aplikasi Android untuk memberikan prediksi secara real-time. Aplikasi ini menerima input dari pengguna dan kemudian menampilkan hasil prediksi langsung di layar perangkat.
+
+### Prediksi Stunting dan Wasting
+
+Bagian pertama dari aplikasi memberikan prediksi terkait Stunting dan Wasting, yang membantu orang tua untuk mendeteksi kondisi gizi anak berdasarkan data tinggi dan berat badan mereka.
+
+![Hasil Model Prediksi Stunting Dan Wasting](./images/screenshot_apk_result.png)
+
+Pada gambar berikut, Anda dapat melihat bagaimana hasil prediksi untuk Stunting dan Wasting ditampilkan, memberikan informasi apakah anak mengalami Stunting, Wasting, atau Normal berdasarkan data tinggi badan dan berat badan mereka.
+
+- **Stunting**: Menampilkan hasil prediksi apakah anak termasuk dalam kategori Sangat Pendek, Pendek, atau Normal berdasarkan tinggi badan mereka.
+- **Wasting**: Menampilkan hasil prediksi apakah anak mengalami Berat Badan Sangat Kurang, Berat Badan Kurang, atau Normal berdasarkan berat badan mereka.
+
+### Prediksi Risiko Kesehatan Kehamilan (Maternal Health Risk)
+
+Bagian kedua dari aplikasi adalah prediksi terkait Risiko Kesehatan Kehamilan, yang berfungsi untuk membantu ibu hamil memantau kesehatan mereka dengan mendeteksi kondisi medis berisiko seperti hipertensi, diabetes, dan masalah jantung.
+
+![Hasil Model Prediksi Stunting Dan Wasting](./images/screenshot_apk_result.png)
+
+Pada gambar berikut, Anda dapat melihat bagaimana hasil prediksi untuk Maternal Health Risk ditampilkan, memberikan informasi mengenai tingkat risiko kesehatan ibu hamil berdasarkan data medis yang dimasukkan, seperti tekanan darah, kadar gula darah, suhu tubuh, dan denyut jantung.
+
+- **High risk**: Risiko tinggi, menunjukkan bahwa ibu hamil berisiko mengalami komplikasi serius.
+- **Low risk**: Risiko rendah, yang menunjukkan bahwa ibu hamil tidak menunjukkan tanda-tanda komplikasi serius.
+- **Mid risk**: Risiko sedang, yang menunjukkan ada beberapa faktor yang perlu diperhatikan untuk mencegah komplikasi.
+
+---
