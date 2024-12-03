@@ -1,37 +1,41 @@
-# Pendahuluan
-
-Kami membuat model deteksi **stunting**, **wasting**, dan **risiko kehamilan** untuk memenuhi main quest ML stack. Model ini dirancang untuk membantu masyarakat, khususnya para ibu, dalam mendeteksi kondisi gizi anak dan risiko kehamilan secara dini serta memberikan solusi berbasis data yang mudah diakses. Tujuan utama model ini adalah untuk meningkatkan kualitas hidup dan kesehatan anak-anak di Indonesia, terutama dalam menangani masalah stunting dan wasting yang masih menjadi tantangan besar.
+Here is the translated document with the same structure:
 
 ---
 
-# Alasan Kami Memilih Fitur Ini dan Menggunakan Model Ini
+# Introduction
 
-Kami mengkritisi masalah orang tua yang tidak mengetahui apakah anak mereka mengalami **stunting** atau **wasting**, atau apakah kondisi kehamilan mereka berisiko. Ketidaktahuan ini sering menghalangi tindakan pencegahan yang bisa diambil lebih awal, yang sangat penting untuk memastikan kesehatan ibu dan anak. Dengan fitur ini, kami ingin menyediakan alat diagnostik yang sederhana namun berbasis data, yang memungkinkan orang tua untuk memantau kondisi gizi anak dan mengambil langkah pencegahan sejak dini, serta memberikan rekomendasi berbasis data yang dapat mengurangi risiko stunting dan wasting pada anak-anak Indonesia.
-
----
-
-# Persiapan Dataset
-
-Organisasi Kesehatan Dunia (WHO) telah menetapkan kriteria standar untuk mengklasifikasikan status gizi, termasuk untuk kondisi **stunting** (pendek) dan **wasting** (kekurangan berat badan).  
-
-- **Stunting** terjadi ketika tinggi badan anak lebih rendah dari standar yang ditentukan untuk usia mereka, menunjukkan kurangnya asupan gizi jangka panjang yang berdampak pada perkembangan fisik.  
-- **Wasting** mengindikasikan kekurangan berat badan secara signifikan, yang sering kali disebabkan oleh malnutrisi akut atau penyakit yang memengaruhi berat badan anak dalam waktu singkat.  
-
-Dalam bagian ini, kami akan menunjukkan pembagian kelas dan distribusi dataset berdasarkan indikator **PB/U (Panjang Badan sesuai Umur)** untuk stunting dan **BB/U (Berat Badan sesuai Umur)** untuk wasting.  
+We developed a detection model for **stunting**, **wasting**, and **maternal health risks** to fulfill the main quest of the ML stack. This model is designed to assist the community, especially mothers, in early detection of children’s nutritional conditions and pregnancy risks. It provides data-driven solutions that are easily accessible. The primary goal of this model is to improve the quality of life and health of children in Indonesia, particularly in addressing the ongoing challenges of stunting and wasting.
 
 ---
 
-## **Stunting WHO Chart dan Distribusi Kelas Dataset**
+# Why We Chose These Features and This Model
 
-**Stunting** mengacu pada kondisi kekurangan gizi kronis yang menyebabkan tinggi badan anak lebih rendah dari standar yang sesuai dengan usianya.  
+We observed that many parents are unaware of whether their children are experiencing **stunting** or **wasting**, or whether their pregnancy is at risk. This lack of knowledge often prevents early preventive measures, which are crucial for ensuring the health of both mother and child. Through this feature, we aim to provide a simple yet data-driven diagnostic tool that allows parents to monitor their children's nutritional conditions and take early preventive actions. Additionally, the tool offers data-based recommendations to mitigate the risk of stunting and wasting among Indonesian children.
 
-### **Kategori Kelas Stunting (PB/U):**
-- **Sangat Pendek:** Tinggi badan kurang dari -3 SD.  
-- **Pendek:** Tinggi badan berada di -3 SD hingga kurang dari -2 SD.  
-- **Normal:** Tinggi badan berada di -2 SD hingga +3 SD.  
-- **Tinggi:** Tinggi badan lebih dari +3 SD.  
+---
 
-### **Visualisasi Stunting WHO Chart**
+# Dataset Preparation
+
+The World Health Organization (WHO) has established standard criteria to classify nutritional statuses, including conditions like **stunting** (short stature) and **wasting** (underweight).  
+
+- **Stunting** occurs when a child’s height is below the standard for their age, indicating long-term nutritional deficiencies that impact physical development.  
+- **Wasting** signifies a significant underweight condition, often due to acute malnutrition or illnesses that affect the child’s weight over a short period.  
+
+In this section, we present the class distribution and dataset division based on indicators such as **HAZ (Height-for-Age Z-score)** for stunting and **WAZ (Weight-for-Age Z-score)** for wasting.  
+
+---
+
+## **Stunting WHO Chart and Dataset Class Distribution**
+
+**Stunting** refers to chronic malnutrition that results in a child’s height being lower than the standard for their age.  
+
+### **Stunting Categories (HAZ):**
+- **Severely Stunted:** Height less than -3 SD.  
+- **Stunted:** Height between -3 SD and -2 SD.  
+- **Normal:** Height between -2 SD and +3 SD.  
+- **Tall:** Height greater than +3 SD.  
+
+### **Stunting WHO Chart Visualization**
 
 <div style="text-align: center;">
     <h3>Stunting WHO Chart</h3>
@@ -39,42 +43,42 @@ Dalam bagian ini, kami akan menunjukkan pembagian kelas dan distribusi dataset b
 
 <div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Stunting Pria</h4>
-    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting Pria" style="width: 100%;"/>
+    <h4>Stunting (Male)</h4>
+    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting Male" style="width: 100%;"/>
   </div>
   <div style="flex: 1; padding-left: 10px; text-align: center;">
-    <h4>Stunting Wanita</h4>
-    <img src="./images/chartWHO/stunting_wanita.jpg" alt="Stunting Wanita" style="width: 100%;"/>
+    <h4>Stunting (Female)</h4>
+    <img src="./images/chartWHO/stunting_wanita.jpg" alt="Stunting Female" style="width: 100%;"/>
   </div>
 </div>
 
 ---
 
-### **Distribusi Kelas Stunting**
+### **Stunting Class Distribution**
 
-Grafik berikut menunjukkan sebaran kelas stunting dalam dataset, menggambarkan prevalensi anak-anak berdasarkan panjang badan mereka.  
+The following chart illustrates the class distribution for stunting in the dataset, depicting the prevalence of children based on their height measurements.  
 
 <div style="text-align: center;">
-    <h3>Distribusi Kelas Stunting</h3>
+    <h3>Stunting Class Distribution</h3>
 </div>
 
 <div style="text-align: center;">
-    <img src="./images/datasetdistribution/distribusi_stunting.png" alt="Distribusi Kelas Stunting" style="width: 80%;"/>
+    <img src="./images/datasetdistribution/distribusi_stunting.png" alt="Stunting Class Distribution" style="width: 80%;"/>
 </div>
 
 ---
 
-## **Wasting WHO Chart dan Distribusi Kelas Dataset**
+## **Wasting WHO Chart and Dataset Class Distribution**
 
-**Wasting** adalah kondisi gizi akut yang terjadi ketika berat badan anak lebih rendah dari standar usianya.  
+**Wasting** indicates acute nutritional deficiency when a child’s weight is below the standard for their age.  
 
-### **Kategori Kelas Wasting (BB/U):**
-- **Berat Badan Sangat Kurang:** Berat badan kurang dari -3 SD.  
-- **Berat Badan Kurang:** Berat badan berada di -3 SD hingga kurang dari -2 SD.  
-- **Normal:** Berat badan berada di -2 SD hingga +1 SD.  
-- **Risiko Berat Badan Berlebih:** Berat badan lebih dari +1 SD.  
+### **Wasting Categories (WAZ):**
+- **Severely Underweight:** Weight less than -3 SD.  
+- **Underweight:** Weight between -3 SD and -2 SD.  
+- **Normal:** Weight between -2 SD and +1 SD.  
+- **Risk of Overweight:** Weight greater than +1 SD.  
 
-### **Visualisasi Wasting WHO Chart**
+### **Wasting WHO Chart Visualization**
 
 <div style="text-align: center;">
     <h3>Wasting WHO Chart</h3>
@@ -82,98 +86,98 @@ Grafik berikut menunjukkan sebaran kelas stunting dalam dataset, menggambarkan p
 
 <div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Wasting Pria</h4>
-    <img src="./images/chartWHO/wasting_pria.jpg" alt="Wasting Pria" style="width: 100%;"/>
+    <h4>Wasting (Male)</h4>
+    <img src="./images/chartWHO/wasting_pria.jpg" alt="Wasting Male" style="width: 100%;"/>
   </div>
   <div style="flex: 1; padding-left: 10px; text-align: center;">
-    <h4>Wasting Wanita</h4>
-    <img src="./images/chartWHO/wasting_wanita.jpg" alt="Wasting Wanita" style="width: 100%;"/>
+    <h4>Wasting (Female)</h4>
+    <img src="./images/chartWHO/wasting_wanita.jpg" alt="Wasting Female" style="width: 100%;"/>
   </div>
 </div>
 
 ---
 
-### **Distribusi Kelas Wasting**
+### **Wasting Class Distribution**
 
-Grafik berikut menunjukkan sebaran kelas wasting dalam dataset, menggambarkan prevalensi anak-anak berdasarkan berat badan mereka.  
+The chart below illustrates the class distribution for wasting in the dataset, showing the prevalence of children based on their weight measurements.  
 
 <div style="text-align: center;">
-    <h3>Distribusi Kelas Wasting</h3>
+    <h3>Wasting Class Distribution</h3>
 </div>
 
 <div style="text-align: center;">
-    <img src="./images/datasetdistribution/distribusi_wasting.png" alt="Distribusi Kelas Wasting" style="width: 80%;"/>
+    <img src="./images/datasetdistribution/distribusi_wasting.png" alt="Wasting Class Distribution" style="width: 80%;"/>
 </div>
 
 ---
 
 # Maternal Health Risk
 
-### Pendahuluan
-Model deteksi risiko kesehatan kehamilan ini dirancang untuk membantu mengidentifikasi kondisi medis yang berisiko pada ibu hamil, seperti hipertensi, diabetes, dan masalah jantung. Tujuan model ini adalah untuk mendeteksi secara dini potensi masalah kesehatan selama kehamilan dan memberikan solusi berbasis data untuk mengurangi risiko bagi ibu dan bayi.
+### Introduction
+The maternal health risk detection model is designed to help identify risky medical conditions in pregnant women, such as hypertension, diabetes, and heart problems. The goal of this model is to detect potential health issues during pregnancy early and provide data-based solutions to reduce risks for both mother and baby.
 
-### Alasan Kami Memilih Fitur Ini dan Menggunakan Model Ini
-Kami memilih fitur ini karena banyak ibu hamil yang tidak menyadari adanya potensi risiko kesehatan yang dapat membahayakan diri mereka dan bayi. Deteksi dini terhadap kondisi seperti hipertensi dan masalah gula darah dapat mengurangi angka kematian ibu dan bayi. Model ini bertujuan untuk memberikan alat prediksi yang sederhana namun berbasis data bagi ibu hamil.
+### Why We Chose This Feature and Model
+We chose this feature because many pregnant women are unaware of potential health risks that could endanger themselves and their babies. Early detection of conditions like hypertension and glucose abnormalities can significantly reduce maternal and infant mortality rates. This model aims to provide a simple yet data-driven prediction tool for pregnant women.
 
-### Persiapan Dataset
-Dataset ini berisi data medis ibu hamil dengan fitur-fitur seperti usia, tekanan darah, kadar gula darah, suhu tubuh, detak jantung, dan level risiko kehamilan. Data ini digunakan untuk melatih model dalam memprediksi risiko kehamilan berdasarkan indikator medis.
+### Dataset Preparation
+This dataset contains medical records of pregnant women with features such as age, blood pressure, blood sugar levels, body temperature, heart rate, and pregnancy risk levels. This data is used to train the model to predict pregnancy risks based on medical indicators.
 
-### Detail Dataset
-Dataset **Maternal Health Risk** terdiri dari 1014 entri dengan 7 kolom utama:
-- **Age**: Usia ibu hamil.
-- **SystolicBP**: Tekanan darah sistolik.
-- **DiastolicBP**: Tekanan darah diastolik.
-- **BS**: Level gula darah.
-- **BodyTemp**: Suhu tubuh.
-- **HeartRate**: Denyut jantung.
-- **RiskLevel**: Level risiko kehamilan (High risk, Low risk, Mid risk).
+### Dataset Details
+The **Maternal Health Risk** dataset consists of 1014 entries with 7 key columns:
+- **Age**: Age of the pregnant woman.  
+- **SystolicBP**: Systolic blood pressure.  
+- **DiastolicBP**: Diastolic blood pressure.  
+- **BS**: Blood sugar levels.  
+- **BodyTemp**: Body temperature.  
+- **HeartRate**: Heart rate.  
+- **RiskLevel**: Pregnancy risk level (High risk, Low risk, Mid risk).  
 
-### Credit Dataset
-Dataset ini berasal dari [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/863/maternal+health+risk). Terima kasih kepada penyedia dataset yang memungkinkan pengembangan model ini.
+### Dataset Source
+This dataset is from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/863/maternal+health+risk). Thanks to the dataset provider for enabling this model's development.
 
-### Distribusi Kelas
-Dataset ini memiliki tiga kategori dalam **RiskLevel**:
-- **High risk**: Risiko tinggi.
-- **Low risk**: Risiko rendah.
-- **Mid risk**: Risiko menengah.
+### Class Distribution
+The dataset contains three categories in **RiskLevel**:
+- **High risk**: High risk.  
+- **Low risk**: Low risk.  
+- **Mid risk**: Moderate risk.  
 
-Berikut adalah distribusi kelas pada dataset ini:
+The class distribution is as follows:
 
 <div style="text-align: center;">
-    <h3>Distribusi Kelas Maternal Health Risk</h3>
+    <h3>Maternal Health Risk Class Distribution</h3>
 </div>
 
 <div style="text-align: center;">
-    <img src="./images/datasetdistribution/distribusi_maternal_health_risk.png" alt="Distribusi maternal health risk" style="width: 80%;"/>
+    <img src="./images/datasetdistribution/distribusi_maternal_health_risk.png" alt="Maternal Health Risk Class Distribution" style="width: 80%;"/>
 </div>
 
 ---
 
-# Hasil Model pada APK
+# Model Results in the Application
 
-Setelah model disimpan dalam format TensorFlow Lite (TFLite), model diintegrasikan ke dalam aplikasi Android untuk memberikan prediksi secara real-time. Aplikasi ini menerima input dari pengguna dan kemudian menampilkan hasil prediksi langsung di layar perangkat.
+After the model was saved in TensorFlow Lite (TFLite) format, it was integrated into an Android application to provide real-time predictions. The app receives user inputs and displays prediction results directly on the device screen.
 
-### Prediksi Stunting dan Wasting
+### Stunting and Wasting Predictions
 
-Bagian pertama dari aplikasi memberikan prediksi terkait Stunting dan Wasting, yang membantu orang tua untuk mendeteksi kondisi gizi anak berdasarkan data tinggi dan berat badan mereka.
+The first part of the app provides predictions related to Stunting and Wasting, helping parents detect their child's nutritional conditions based on height and weight data.
 
-![Hasil Model Prediksi Stunting Dan Wasting](./images/screenshot_apk_result.png)
+![Model Prediction Results for Stunting and Wasting](./images/screenshot_apk_result.png)
 
-Pada gambar berikut, Anda dapat melihat bagaimana hasil prediksi untuk Stunting dan Wasting ditampilkan, memberikan informasi apakah anak mengalami Stunting, Wasting, atau Normal berdasarkan data tinggi badan dan berat badan mereka.
+The following image shows how prediction results for Stunting and Wasting are displayed, providing information on whether a child experiences Stunting, Wasting, or Normal conditions based on their height and weight.
 
-- **Stunting**: Menampilkan hasil prediksi apakah anak termasuk dalam kategori Sangat Pendek, Pendek, atau Normal berdasarkan tinggi badan mereka.
-- **Wasting**: Menampilkan hasil prediksi apakah anak mengalami Berat Badan Sangat Kurang, Berat Badan Kurang, atau Normal berdasarkan berat badan mereka.
+- **Stunting**: Displays whether the child falls into the Severely Stunted, Stunted, or Normal category based on their height.  
+- **Wasting**: Displays whether the child is Severely Underweight, Underweight, or Normal based on their weight.  
 
-### Prediksi Risiko Kesehatan Kehamilan (Maternal Health Risk)
+### Maternal Health Risk Prediction
 
-Bagian kedua dari aplikasi adalah prediksi terkait Risiko Kesehatan Kehamilan, yang berfungsi untuk membantu ibu hamil memantau kesehatan mereka dengan mendeteksi kondisi medis berisiko seperti hipertensi, diabetes, dan masalah jantung.
+The second part of the app provides predictions related to Maternal Health Risks, helping pregnant women monitor their health by detecting risky medical conditions such as hypertension, diabetes, and heart problems.
 
-![Hasil Model Prediksi Stunting Dan Wasting](./images/screenshot_apk_result.png)
+![Model Prediction Results for Maternal Health Risk](./images/screenshot_apk_result.png)
 
-Pada gambar berikut, Anda dapat melihat bagaimana hasil prediksi untuk Maternal Health Risk ditampilkan, memberikan informasi mengenai tingkat risiko kesehatan ibu hamil berdasarkan data medis yang dimasukkan, seperti tekanan darah, kadar gula darah, suhu tubuh, dan denyut jantung.
+The following image shows how prediction results for Maternal Health Risks are displayed, providing information about the pregnancy risk level based on medical data such as blood pressure, glucose levels, body temperature, and heart rate.
 
-- **High risk**: Risiko tinggi, menunjukkan bahwa ibu hamil berisiko mengalami komplikasi serius.
-- **Low risk**: Risiko rendah, yang menunjukkan bahwa ibu hamil tidak menunjukkan tanda-tanda komplikasi serius.
-- **Mid risk**: Risiko sedang, yang menunjukkan ada beberapa faktor yang perlu diperhatikan untuk mencegah komplikasi.
+- **High risk**: High risk, indicating potential serious complications.  
+- **Low risk**: Low risk, indicating no signs of serious complications.  
+- **Mid risk**: Moderate risk, indicating some factors to monitor to prevent complications.  
 
 ---
