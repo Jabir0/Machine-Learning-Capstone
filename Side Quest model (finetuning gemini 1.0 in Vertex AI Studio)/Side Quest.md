@@ -5,23 +5,24 @@ Kami mempersembahkan domain-specific chatbot yang dibuat melalui proses fine-tun
 
 ## Reason Why We Choose This Feature  
 Kami mengkritisi platform konsultasi dokter yang sering memerlukan waktu terlalu lama untuk merespons pertanyaan pasien.
-
+<div style="display: flex; justify-content: space-between;">
 <table>
   <tr>
-    <td><div style="display: flex; justify-content: space-between;">
+    <td>
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Pasien Bertanya</h4>
     <img src="images\waktu_pasien_bertanya.png" alt="Pasien bertanya" style="width: 100%;"/>
   </div>
-  </div></td>
-    <td><div style="display: flex; justify-content: space-between;">
+    </td>
+    <td>
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Dokter Menjawab</h4>
     <img src="images\waktu_dokter_menjawab.png" alt="Pasien bertanya" style="width: 100%;"/>
   </div>
-  </div></td>
+  </td>
   </tr>
 </table>
+</div>
 
 Masalah ini dapat menyebabkan ketidaknyamanan bagi calon ibu, orang tua baru, dan ibu-ibu muda yang membutuhkan jawaban cepat. Untuk menjawab tantangan ini, kami merancang domain-specific chatbot yang mampu memberikan jawaban akurat terhadap pertanyaan umum yang sering diajukan.  
 
