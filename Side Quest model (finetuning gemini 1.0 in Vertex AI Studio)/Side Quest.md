@@ -11,7 +11,7 @@ Kami mengkritisi platform konsultasi dokter yang sering memerlukan waktu terlalu
     <td><div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Pasien Bertanya</h4>
-    <img src="images\waktu_pasien_bertanya.png" alt="Pasien bertanya" style="width: 50%;"/>
+    <img src="images\waktu_pasien_bertanya.png" alt="Pasien bertanya" style="width: 100%;"/>
   </div>
   </div></td>
     <td><div style="display: flex; justify-content: space-between;">
