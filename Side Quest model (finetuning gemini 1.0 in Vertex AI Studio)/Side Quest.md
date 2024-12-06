@@ -1,73 +1,65 @@
 # Side Quest: Domain-Specific Chatbot with Gemini 1.0 Pro 002  
 
 ## Introduction  
-Kami mempersembahkan domain-specific chatbot yang dibuat melalui proses fine-tuning menggunakan base model **Gemini 1.0 Pro 002** di Vertex AI Studio. Proyek ini bertujuan untuk memanfaatkan kemampuan text-to-text generation yang ditawarkan oleh Gemini 1.0 Pro 002 untuk menciptakan chatbot yang dapat menjawab pertanyaan-pertanyaan umum terkait kesehatan ibu dan anak dengan cepat dan relevan.  
+We present a domain-specific chatbot developed through fine-tuning the **Gemini 1.0 Pro 002** base model in Vertex AI Studio. This project leverages the text-to-text generation capabilities of Gemini 1.0 Pro 002 to create a chatbot that can swiftly and accurately address frequently asked questions related to maternal and child health.  
 
-## Reason Why We Choose This Feature  
-Kami mengkritisi platform konsultasi dokter yang sering memerlukan waktu terlalu lama untuk merespons pertanyaan pasien.
-<div style="display: flex; justify-content: space-between;">
-<table>
+## Why We Chose This Feature  
+We identified a common issue with existing doctor consultation platforms: response times are often too long for patients seeking urgent answers.  
+
+<table style="width: 100%;">
   <tr>
-    <td>
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Waktu Pasien Bertanya</h4>
-    <img src="images\waktu_pasien_bertanya.png" alt="Pasien bertanya" style="width: 100%;"/>
-  </div>
+    <td style="width: 50%; text-align: center;">
+      <h4>Patient Inquiry Time</h4>
+      <img src="images/waktu_pasien_bertanya.png" alt="Patient Inquiry Time" style="width: 100%;"/>
     </td>
-    <td>
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Waktu Dokter Menjawab</h4>
-    <img src="images\waktu_dokter_menjawab.png" alt="Pasien bertanya" style="width: 100%;"/>
-  </div>
-  </td>
+    <td style="width: 50%; text-align: center;">
+      <h4>Doctor Response Time</h4>
+      <img src="images/waktu_dokter_menjawab.png" alt="Doctor Response Time" style="width: 100%;"/>
+    </td>
   </tr>
 </table>
-</div>
 
-Masalah ini dapat menyebabkan ketidaknyamanan bagi calon ibu, orang tua baru, dan ibu-ibu muda yang membutuhkan jawaban cepat. Untuk menjawab tantangan ini, kami merancang domain-specific chatbot yang mampu memberikan jawaban akurat terhadap pertanyaan umum yang sering diajukan.  
+This delay causes discomfort for expectant mothers, new parents, and young mothers who need prompt answers. To tackle this issue, we designed a domain-specific chatbot capable of delivering accurate answers to frequently asked questions.
+
+---
 
 ## Fine-Tuning Preparation  
 
 ### 1. Preparing the Model  
-Kami memilih model terbaik dari Model Garden untuk mendukung fitur domain-specific chatbot.
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Model Garden Vertex AI</h4>
-    <img src="images\model_garden_vertexai (1).png" alt="Model Garden" style="width: 100%;"/>
-  </div>
+We selected the best model from the Model Garden in Vertex AI to support the domain-specific chatbot feature.  
+
+<div style="text-align: center;">
+  <h4>Model Garden in Vertex AI</h4>
+  <img src="images/model_garden_vertexai (1).png" alt="Model Garden Overview" style="width: 100%; margin-bottom: 10px;"/>
+  <img src="images/model_garden_vertexai (2).png" alt="Model Selection" style="width: 100%;"/>
 </div>
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="images\model_garden_vertexai (2).png" alt="Model Garden" style="width: 100%;"/>
-  </div>
-</div>
+After evaluating various options, we chose **Gemini 1.0 Pro 002** for fine-tuning because:  
 
-Setelah mempertimbangkan berbagai opsi, kami memutuskan menggunakan **Gemini 1.0 Pro 002** untuk fine-tuning karena: 
+- It supports **text-to-text generation**, aligning with our use case and prompts.  
+- It balances quality, performance, and cost for tasks like **content generation**, **editing**, **summarization**, and **classification**.  
+- It fits the chatbot requirements for maternal and child health topics.  
 
-- **Use case** dan prompt-nya fokus pada **text-to-text generation**.  
-- Dirancang untuk menyeimbangkan kualitas, performa, dan biaya untuk tugas seperti **content generation**, **editing**, **summarization**, dan **classification**.  
-- Cocok untuk kebutuhan chatbot terkait kesehatan ibu dan anak.  
+---
 
 ### 2. Preparing the Dataset  
-Kami mengumpulkan data dari platform konsultasi dokter untuk memperoleh pasangan pertanyaan dan jawaban.
+We gathered data from doctor consultation platforms to obtain question-answer pairs.  
 
-Link Kumpulan Tanya Jawab :
+**Sources of Question-Answer Data:**  
+- [Alodokter - Baby Health Community](https://www.alodokter.com/komunitas/topic-tag/bayi)  
+- [Alodokter - Stunting Community](https://www.alodokter.com/komunitas/topic-tag/stunting)  
 
-https://www.alodokter.com/komunitas/topic-tag/bayi
-https://www.alodokter.com/komunitas/topic-tag/stunting
+To handle repetitive questions on these platforms, we utilized Generative AI to augment common question-answer pairs. The resulting dataset is compiled into a CSV file:  
 
+- [Dataset (CSV)](https://github.com/Jabir0/Machine-Learning-GIZI/blob/main/Side%20Quest%20model%20(finetuning%20gemini%201.0%20in%20Vertex%20AI%20Studio)/dataset/persiapan_dataset_qna.csv)  
 
-Karena banyak pertanyaan yang serupa di platform tersebut, kami menggunakan Generative AI untuk melakukan augmentasi pada pertanyaan dan jawaban umum. Hasilnya kami kumpul ke dalam csv berikut :
+**Dataset Distribution:**  
+- **60%** of the data is sourced from doctor consultation platforms.  
+- **40%** of the data is generated using Generative AI.  
 
-[Side Quest model (finetuning gemini 1.0 in Vertex AI Studio)/dataset/persiapan_dataset_qna.csv](https://github.com/Jabir0/Machine-Learning-GIZI/blob/main/Side%20Quest%20model%20(finetuning%20gemini%201.0%20in%20Vertex%20AI%20Studio)/dataset/persiapan_dataset_qna.csv)
+**Fine-Tuning Dataset Requirements:**  
+The dataset prepared for Gemini 1.0 Pro 002 follows this structure:  
 
-Distribusi dataset yang digunakan adalah:  
-- **60% data** dari platform konsultasi dokter.  
-- **40% data** yang dihasilkan melalui Generative AI.  
-
-**Finetuning Dataset Requirements:**  
-Dataset yang disiapkan untuk Gemini 1.0 Pro 002 memiliki struktur berikut:  
 ```jsonl
 {
   "messages": [
@@ -78,112 +70,80 @@ Dataset yang disiapkan untuk Gemini 1.0 Pro 002 memiliki struktur berikut:
   ]
 }
 ```  
-Detail penting:  
-- **Role:** dapat berupa `system`, `user`, atau `model`.  
-- **Content:** berisi isi pesan dengan batas maksimal token untuk konteks dan pesan gabungan sebesar **32,768 tokens**.  
-- **System role** hanya digunakan sebagai elemen pertama dalam array (opsional).  
-- Panjang token maksimal per pesan untuk role `model` adalah **8,192 tokens**.  
 
-**role** `system`, kami mengatur bahwa `system` adalah seorang dokter anak,dokter umum, dan ahli gizi yang mencoba memberikan edukasi kesehatan kepada orang tua. 
+Key details:  
+- **Role**: Can be `system`, `user`, or `model`.  
+- **Content**: Contains the message text with a combined context and message token limit of **32,768 tokens**.  
+- **System role** is used only as the first element in the array (optional).  
+- Maximum token length per `model` message is **8,192 tokens**.  
 
-**role** `user`, diisi dengan chat/pertanyaan dari user/pasien, dan **role** `model` diisi dengan jawaban dari dokter untuk pertanyaan user/pasien.
+For the **system** role, we defined it as a pediatrician, general practitioner, and nutritionist providing health education to parents. The **user** role contains user/patient queries, while the **model** role includes the doctor’s response.  
 
-Berikut contohnya :
+Example:  
 ```jsonl
-{"messages": [{"role": "system", "content": "Anda adalah dokter spesialis anak yang memberikan edukasi dan saran mengenai kesehatan anak dan perawatan bayi."}, {"role": "user", "content": "Dokter bayi saya usia 4 bulan, sekarang lagi pilek dok, saya prefer obatin secara alami dulu dok, bagaimana cara mengatasi pilek pake obat alami ya dok? Mohon saran nya dok "}, {"role": "model", "content": "Pilek pada bayi bisa disebabkan oleh infeksi virus, dan meskipun pengobatan medis mungkin diperlukan jika gejalanya parah, ada beberapa cara alami yang bisa membantu meringankan gejala pilek pada bayi:\n\n1. **Menggunakan humidifier**: Gunakan humidifier di kamar bayi untuk menjaga kelembapan udara. Ini membantu meringankan hidung tersumbat dan mengurangi iritasi pada saluran napas bayi.\n2. **Kompres hangat**: Kompreskan kain hangat di bagian wajah bayi, terutama pada area hidung dan dada, untuk membantu melegakan pernapasan dan mengurangi ketidaknyamanan.\n3. **Mengatur posisi tidur**: Tidurkan bayi dengan posisi kepala sedikit lebih tinggi untuk membantu mengurangi hidung tersumbat dan memudahkan pernapasan.\n4. **Menjaga kebersihan udara**: Pastikan udara di sekitar bayi tidak tercemar polusi atau asap rokok, karena ini bisa memperburuk pilek bayi.\n\nJika pilek disertai demam tinggi, kesulitan bernapas, atau tidak membaik setelah beberapa hari, sebaiknya segera konsultasikan dengan dokter anak."}]}
-```
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Anda adalah dokter spesialis anak yang memberikan edukasi dan saran mengenai kesehatan anak dan perawatan bayi."
+    },
+    {
+      "role": "user",
+      "content": "Dokter, bayi saya usia 4 bulan sekarang sedang pilek. Saya lebih suka menggunakan pengobatan alami terlebih dahulu. Bagaimana cara mengatasi pilek dengan cara alami? Mohon sarannya."
+    },
+    {
+      "role": "model",
+      "content": "Pilek pada bayi sering disebabkan oleh infeksi virus. Meskipun pengobatan medis mungkin diperlukan untuk gejala yang parah, berikut beberapa cara alami yang dapat membantu:\n\n1. **Humidifier**: Gunakan humidifier di kamar bayi untuk menjaga kelembapan udara. Ini membantu meredakan hidung tersumbat dan mengurangi iritasi.\n2. **Kompres hangat**: Tempelkan kain hangat pada wajah bayi, terutama di area hidung dan dada, untuk membantu melegakan pernapasan dan mengurangi ketidaknyamanan.\n3. **Atur posisi tidur**: Tidurkan bayi dengan posisi kepala sedikit lebih tinggi untuk mengurangi hidung tersumbat dan mempermudah pernapasan.\n4. **Udara bersih**: Pastikan udara di sekitar bayi bebas dari polusi atau asap rokok, karena dapat memperburuk pilek.\n\nJika pilek disertai demam tinggi, kesulitan bernapas, atau berlangsung lebih dari beberapa hari, segera konsultasikan dengan dokter anak."
+    }
+  ]
+}
+```  
 
-Untuk lebih lengkapnya, bisa liat pada dataset berikut :
-https://github.com/Jabir0/Machine-Learning-GIZI/blob/main/Side%20Quest%20model%20(finetuning%20gemini%201.0%20in%20Vertex%20AI%20Studio)/dataset/dataset_qna_fix.jsonl
+Full dataset: [Q&A Dataset (JSONL)](https://github.com/Jabir0/Machine-Learning-GIZI/blob/main/Side%20Quest%20model%20(finetuning%20gemini%201.0%20in%20Vertex%20AI%20Studio)/dataset/dataset_qna_fix.jsonl)  
 
-Setelah dataset diproses, kami menyimpannya ke dalam Google Cloud Storage bucket untuk keperluan fine-tuning.  
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="images\bucket capstone.png" alt="Bucket Capstone" style="width: 100%;"/>
-  </div>
+The processed dataset was stored in a Google Cloud Storage bucket for fine-tuning.  
+
+<div style="text-align: center;">
+  <h4>Cloud Storage Bucket</h4>
+  <img src="images/bucket capstone.png" alt="Cloud Storage" style="width: 100%;"/>
 </div>
 
-### 3. Fine-Tuning the Model Setting
-Berikut Settingan Finetuning model kami :
+---
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="images\finetuning preparation (1).png" alt="Bucket Capstone" style="width: 100%;"/>
-  </div>
+### 3. Fine-Tuning Settings  
+
+<div style="text-align: center;">
+  <h4>Fine-Tuning Configuration</h4>
+  <img src="images/finetuning preparation (1).png" alt="Fine-Tuning Configuration 1" style="width: 100%; margin-bottom: 10px;"/>
+  <img src="images/finetuning preparation (2).png" alt="Fine-Tuning Configuration 2" style="width: 100%;"/>
 </div>
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="images\finetuning preparation (2).png" alt="Bucket Capstone" style="width: 100%;"/>
-  </div>
-</div>
+
+---
 
 ## Results  
 
 ### Fine-Tuning Metrics  
-Setelah start tuning dan masuk ke proses fine-tuning, kami memperoleh hasil metrics berikut:
+During the fine-tuning process, we monitored the metrics:  
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Monitor Tuning Progress</h4>
-    <img src="finetuning-gemini1.0\documentation finetuning\dokumentasi monitor finetuning.png" alt="Monitoring Tuning Progress" style="width: 100%;"/>
-  </div>
+<div style="text-align: center;">
+  <h4>Monitoring Fine-Tuning Progress</h4>
+  <img src="finetuning-gemini1.0/documentation finetuning/dokumentasi monitor finetuning.png" alt="Fine-Tuning Metrics" style="width: 100%;"/>
 </div>
 
-<table>
-  <tr>
-    <td><div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="finetuning-gemini1.0\documentation finetuning\Fraction of correct next step preds.png" alt="Fraction of correct next step preds" style="width: 100%;"/>
-  </div></div></td>
-    <td><div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="finetuning-gemini1.0\documentation finetuning\Fraction of correct next step preds.png" alt="Fraction of correct next step preds" style="width: 100%;"/>
-  </div></div></td>
-    <td><div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="finetuning-gemini1.0\documentation finetuning\Fraction of correct next step preds.png" alt="Fraction of correct next step preds" style="width: 100%;"/>
-  </div></div></td>
-  </tr>
-</table>
-
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Tunning Model Dataset</h4>
-    <img src="dataset\dokumentasi dataset finetuning_1.png" alt="Tuning Model Dataset" style="width: 100%;"/>
-  </div>
-</div>
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="dataset\dokumentasi dataset finetuning_2.png" alt="Tuning Model Dataset" style="width: 100%;"/>
-  </div>
-</div>
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="dataset\dokumentasi dataset finetuning_3.png" alt="Tuning Model Dataset" style="width: 100%;"/>
-  </div>
-</div>
-
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Tunning Model Details</h4>
-    <img src="finetuning-gemini1.0\documentation finetuning\dokumentasi detail finetuning.png" alt="Tunning Model Details" style="width: 100%;"/>
-  </div>
-</div>
+---
 
 ### Test Results  
-Hasil uji model fine-tuning ditampilkan pada chat di Vertex AI Studio. Chatbot berhasil menjawab pertanyaan umum dengan tingkat relevansi yang tinggi.
+The fine-tuned chatbot successfully answered general questions with high relevance in Vertex AI Studio's testing environment.  
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <h4>Test Chatbot</h4>
-    <img src="images\test-finetuning model (1).png" alt="Coba Finetuning Model" style="width: 100%;"/>
-  </div>
-</div>
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="images\test-finetuning model (2).png" alt="Coba Finetuning Model" style="width: 100%;"/>
-  </div>
+<div style="text-align: center;">
+  <h4>Chatbot Testing</h4>
+  <img src="images/test-finetuning model (1).png" alt="Chatbot Test 1" style="width: 100%; margin-bottom: 10px;"/>
+  <img src="images/test-finetuning model (2).png" alt="Chatbot Test 2" style="width: 100%;"/>
 </div>
 
-## Deploying the Model  
-Setelah proses fine-tuning selesai, fine-tuning model `chatbot_gizi_model` diserahkan ke tim **Cloud Computing cohort** untuk pembuatan endpoint. Endpoint ini akan digunakan sebagai backend untuk integrasi chatbot dalam aplikasi.  
+---
+
+## Deployment  
+After completing the fine-tuning, the `chatbot_gizi_model` was handed over to the **Cloud Computing cohort** team to create an endpoint. This endpoint will serve as the backend for chatbot integration into the application.
+
+--- 
