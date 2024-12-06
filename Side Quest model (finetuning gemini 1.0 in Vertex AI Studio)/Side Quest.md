@@ -6,16 +6,26 @@ Kami mempersembahkan domain-specific chatbot yang dibuat melalui proses fine-tun
 ## Reason Why We Choose This Feature  
 Kami mengkritisi platform konsultasi dokter yang sering memerlukan waktu terlalu lama untuk merespons pertanyaan pasien.
 
-<div style="display: flex; justify-content: space-between;">
+<table>
+  <tr>
+    <td><div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Pasien Bertanya</h4>
     <img src="images\waktu_pasien_bertanya.png" alt="Pasien bertanya" style="width: 50%;"/>
   </div>
+  </div></td>
+    <td><div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Dokter Menjawab</h4>
+<<<<<<< HEAD
+    <img src="images\waktu_dokter_menjawab.png" alt="Pasien bertanya" style="width: 100%;"/>
+=======
     <img src="images\waktu_dokter_menjawab.png" alt="Dokter Menjawab" style="width: 50%;"/>
+>>>>>>> a4bf2d8c6e3aa1a8e2486edc97a082765c9b7676
   </div>
-</div>
+  </div></td>
+  </tr>
+</table>
 
 Masalah ini dapat menyebabkan ketidaknyamanan bagi calon ibu, orang tua baru, dan ibu-ibu muda yang membutuhkan jawaban cepat. Untuk menjawab tantangan ini, kami merancang domain-specific chatbot yang mampu memberikan jawaban akurat terhadap pertanyaan umum yang sering diajukan.  
 
@@ -121,17 +131,23 @@ Setelah start tuning dan masuk ke proses fine-tuning, kami memperoleh hasil metr
     <img src="finetuning-gemini1.0\documentation finetuning\dokumentasi monitor finetuning.png" alt="Monitoring Tuning Progress" style="width: 100%;"/>
   </div>
 </div>
-<div style="display: flex; justify-content: space-between;">
+
+<table>
+  <tr>
+    <td><div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <img src="finetuning-gemini1.0\documentation finetuning\Fraction of correct next step preds.png" alt="Fraction of correct next step preds" style="width: 100%;"/>
-  </div>
+  </div></div></td>
+    <td><div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="finetuning-gemini1.0\documentation finetuning\Num predictions.png" alt="Num predictions" style="width: 100%;"/>
-  </div>
+    <img src="finetuning-gemini1.0\documentation finetuning\Fraction of correct next step preds.png" alt="Fraction of correct next step preds" style="width: 100%;"/>
+  </div></div></td>
+    <td><div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
-    <img src="finetuning-gemini1.0\documentation finetuning\Total loss.png" alt="Total loss" style="width: 100%;"/>
-  </div>
-</div>
+    <img src="finetuning-gemini1.0\documentation finetuning\Fraction of correct next step preds.png" alt="Fraction of correct next step preds" style="width: 100%;"/>
+  </div></div></td>
+  </tr>
+</table>
 
 <div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
