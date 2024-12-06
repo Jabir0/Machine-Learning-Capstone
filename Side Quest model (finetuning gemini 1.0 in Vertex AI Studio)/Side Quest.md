@@ -17,11 +17,7 @@ Kami mengkritisi platform konsultasi dokter yang sering memerlukan waktu terlalu
     <td><div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Waktu Dokter Menjawab</h4>
-<<<<<<< HEAD
     <img src="images\waktu_dokter_menjawab.png" alt="Pasien bertanya" style="width: 100%;"/>
-=======
-    <img src="images\waktu_dokter_menjawab.png" alt="Dokter Menjawab" style="width: 50%;"/>
->>>>>>> a4bf2d8c6e3aa1a8e2486edc97a082765c9b7676
   </div>
   </div></td>
   </tr>
