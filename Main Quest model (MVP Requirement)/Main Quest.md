@@ -1,5 +1,3 @@
-Here is the translated document with the same structure:
-
 ---
 
 # Introduction
@@ -14,7 +12,10 @@ We observed that many parents are unaware of whether their children are experien
 
 ---
 
-# Dataset Preparation
+# Stunting and Wasting Detection
+
+
+## Dataset Preparation
 
 The World Health Organization (WHO) has established standard criteria to classify nutritional statuses, including conditions like **stunting** (short stature) and **wasting** (underweight).  
 
