@@ -1,5 +1,3 @@
----
-
 # Introduction
 
 We developed a detection model for **stunting**, **wasting**, and **maternal health risks** to fulfill the main quest of the ML stack. This model is designed to assist the community, especially mothers, in early detection of children’s nutritional conditions and pregnancy risks. It provides data-driven solutions that are easily accessible. The primary goal of this model is to improve the quality of life and health of children in Indonesia, particularly in addressing the ongoing challenges of stunting and wasting.
@@ -34,7 +32,9 @@ In this section, we present the class distribution and dataset division based on
 - **Severely Stunted:** Height less than -3 SD.  
 - **Stunted:** Height between -3 SD and -2 SD.  
 - **Normal:** Height between -2 SD and +3 SD.  
-- **Tall:** Height greater than +3 SD.  
+- **Tall:** Height greater than +3 SD. 
+
+<a href="https://hellosehat.com/parenting/bayi/gizi-bayi/status-gizi-bayi/">Source</a>
 
 ### **Stunting WHO Chart Visualization**
 
@@ -45,11 +45,11 @@ In this section, we present the class distribution and dataset division based on
 <div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Stunting (Male)</h4>
-    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting Male" style="width: 100%;"/>
+    <img src="./images/chartWHO/stunting_pria.jpg" alt="Stunting Male" style="width: 80%;"/>
   </div>
   <div style="flex: 1; padding-left: 10px; text-align: center;">
     <h4>Stunting (Female)</h4>
-    <img src="./images/chartWHO/stunting_wanita.jpg" alt="Stunting Female" style="width: 100%;"/>
+    <img src="./images/chartWHO/stunting_wanita.jpg" alt="Stunting Female" style="width: 80%;"/>
   </div>
 </div>
 
@@ -77,7 +77,10 @@ The following chart illustrates the class distribution for stunting in the datas
 - **Severely Underweight:** Weight less than -3 SD.  
 - **Underweight:** Weight between -3 SD and -2 SD.  
 - **Normal:** Weight between -2 SD and +1 SD.  
-- **Risk of Overweight:** Weight greater than +1 SD.  
+- **Risk of Overweight:** Weight greater than +1 SD. 
+
+<a href="https://hellosehat.com/parenting/bayi/gizi-bayi/status-gizi-bayi/">Source</a>
+
 
 ### **Wasting WHO Chart Visualization**
 
@@ -88,11 +91,11 @@ The following chart illustrates the class distribution for stunting in the datas
 <div style="display: flex; justify-content: space-between;">
   <div style="flex: 1; padding-right: 10px; text-align: center;">
     <h4>Wasting (Male)</h4>
-    <img src="./images/chartWHO/wasting_pria.jpg" alt="Wasting Male" style="width: 100%;"/>
+    <img src="./images/chartWHO/wasting_pria.jpg" alt="Wasting Male" style="width: 80%;"/>
   </div>
   <div style="flex: 1; padding-left: 10px; text-align: center;">
     <h4>Wasting (Female)</h4>
-    <img src="./images/chartWHO/wasting_wanita.jpg" alt="Wasting Female" style="width: 100%;"/>
+    <img src="./images/chartWHO/wasting_wanita.jpg" alt="Wasting Female" style="width: 80%;"/>
   </div>
 </div>
 
@@ -108,6 +111,13 @@ The chart below illustrates the class distribution for wasting in the dataset, s
 
 <div style="text-align: center;">
     <img src="./images/datasetdistribution/distribusi_wasting.png" alt="Wasting Class Distribution" style="width: 80%;"/>
+</div>
+
+---
+
+# Model Evaluation
+<div style="text-align: center;">
+    <img src="./images/Model Result/output_model_1.png" style="width: 80%;"/>
 </div>
 
 ---
@@ -152,6 +162,11 @@ The class distribution is as follows:
     <img src="./images/datasetdistribution/distribusi_maternal_health_risk.png" alt="Maternal Health Risk Class Distribution" style="width: 80%;"/>
 </div>
 
+# Model Evaluation
+<div style="text-align: center;">
+    <img src="./images/Model Result/output_model_2.png" style="width: 80%;"/>
+</div>
+
 ---
 
 # Model Results in the Application
@@ -182,3 +197,10 @@ The following image shows how prediction results for Maternal Health Risks are d
 - **Mid risk**: Moderate risk, indicating some factors to monitor to prevent complications.  
 
 ---
+
+# Main Quest (MVP Requirement for Machine Learning) 
+### ✅ Utilize TensorFlow architecture for building machine learning models.
+### ✅ Vertex AI can only be used if you intend to build Generative AI. (Note: Vertex AI is a relatively expensive service, so it's your responsibility to use the provided GCP credits wisely.)
+### ✅ Students are prohibited from using existing models from TensorFlow Hub and similar resources.
+### ✅ Students are prohibited from using models directly from API services such as ChatGPT API, Gemini API, etc.
+### ✅ Using AutoML for creating discriminative AI models is prohibited (Vertex AI is allowed only for Generative AI use cases).
