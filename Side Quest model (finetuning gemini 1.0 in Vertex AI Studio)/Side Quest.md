@@ -1,4 +1,8 @@
-# Side Quest: Domain-Specific Chatbot with Gemini 1.0 Pro 002  
+# Side Quest: Domain-Specific Chatbot with Gemini 1.0 Pro 002 
+
+✅ It is recommended to build two models if you want to model using Vertex AI. First Model: Use TensorFlow to build models from scratch (Transfer Learning is allowed).  Second Model: Use Vertex AI for Generative AI use cases.
+
+✅ It is highly recommended to create your own or do your own fine tuning when solving Generative AI use cases.
 
 ## Introduction  
 We present a domain-specific chatbot developed through fine-tuning the **Gemini 1.0 Pro 002** base model in Vertex AI Studio. This project leverages the text-to-text generation capabilities of Gemini 1.0 Pro 002 to create a chatbot that can swiftly and accurately address frequently asked questions related to maternal and child health.  
@@ -148,6 +152,10 @@ After completing the fine-tuning, the `chatbot_gizi_model` was handed over to th
 
 --- 
 
-# Side Quest 
-### ✅ It is recommended to build two models if you want to model using Vertex AI. First Model: Use TensorFlow to build models from scratch (Transfer Learning is allowed).  Second Model: Use Vertex AI for Generative AI use cases.
-### ✅ It is highly recommended to create your own or do your own fine tuning when solving Generative AI use cases.
+# Model Results in the Application 📲
+
+
+<div style="text-align: center;">
+        <h3>Chatbot Result in APK</h3>
+        <img src="images/chatbot_apk.jpg" alt="Stunting and Wasting Results" style="width: 40%; max-width: 500px; height: auto;">
+    </div>

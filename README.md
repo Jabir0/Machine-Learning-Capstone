@@ -1,21 +1,41 @@
-# Machine Learning Repository (GIZI)
+<p align="center">
+  <a>
+    <img alt="Gizi GIF" title="Gizi" src="GIZI_Animation.gif">
+  </a>
+</p>
 
-# Introduction
+# 🤖 Machine Learning Repository (GIZI) 🤖
+
+# Main Quest (MVP Requirement for Machine Learning) 🏆
+✅ Utilize TensorFlow architecture for building machine learning models.
+
+✅ Vertex AI can only be used if you intend to build Generative AI. (Note: Vertex AI is a relatively expensive service, so it's your responsibility to use the provided GCP credits wisely.)
+
+✅ Students are prohibited from using existing models from TensorFlow Hub and similar resources.
+
+✅ Students are prohibited from using models directly from API services such as ChatGPT API, Gemini API, etc.
+
+✅ Using AutoML for creating discriminative AI models is prohibited (Vertex AI is allowed only for Generative AI use cases).
+
+---
+
+
+# Stunting and Wasting Detection 👶🏻 
+
+## Introduction 📖
 
 We developed a detection model for **stunting**, **wasting**, and **maternal health risks** to fulfill the main quest of the ML stack. This model is designed to assist the community, especially mothers, in early detection of children’s nutritional conditions and pregnancy risks. It provides data-driven solutions that are easily accessible. The primary goal of this model is to improve the quality of life and health of children in Indonesia, particularly in addressing the ongoing challenges of stunting and wasting.
 
 ---
 
-# Why We Chose These Features and This Model
+## Why We Chose These Features and This Model 🔍
 
 We observed that many parents are unaware of whether their children are experiencing **stunting** or **wasting**, or whether their pregnancy is at risk. This lack of knowledge often prevents early preventive measures, which are crucial for ensuring the health of both mother and child. Through this feature, we aim to provide a simple yet data-driven diagnostic tool that allows parents to monitor their children's nutritional conditions and take early preventive actions. Additionally, the tool offers data-based recommendations to mitigate the risk of stunting and wasting among Indonesian children.
 
 ---
 
-# Stunting and Wasting Detection
 
-
-## Dataset Preparation
+## Dataset Preparation 🗂️
 
 The World Health Organization (WHO) has established standard criteria to classify nutritional statuses, including conditions like **stunting** (short stature) and **wasting** (underweight).  
 
@@ -26,7 +46,7 @@ In this section, we present the class distribution and dataset division based on
 
 ---
 
-## **Stunting WHO Chart and Dataset Class Distribution**
+## Stunting WHO Chart and Dataset Class Distribution 📈
 
 **Stunting** refers to chronic malnutrition that results in a child’s height being lower than the standard for their age.  
 
@@ -71,7 +91,7 @@ The following chart illustrates the class distribution for stunting in the datas
 
 ---
 
-## **Wasting WHO Chart and Dataset Class Distribution**
+## Wasting WHO Chart and Dataset Class Distribution 📈
 
 **Wasting** indicates acute nutritional deficiency when a child’s weight is below the standard for their age.  
 
@@ -117,25 +137,25 @@ The chart below illustrates the class distribution for wasting in the dataset, s
 
 ---
 
-# Model Evaluation
+## Model Evaluation 🧪
 <div style="text-align: center;">
     <img src="Main Quest model (MVP Requirement)/images/Model Result/output_model_1.png" style="width: 80%;"/>
 </div>
 
 ---
 
-# Maternal Health Risk
+# Maternal Health Risk 🤰🏻
 
-### Introduction
+## Introduction 📖
 The maternal health risk detection model is designed to help identify risky medical conditions in pregnant women, such as hypertension, diabetes, and heart problems. The goal of this model is to detect potential health issues during pregnancy early and provide data-based solutions to reduce risks for both mother and baby.
 
-### Why We Chose This Feature and Model
+## Why We Chose This Feature and Model 🔍
 We chose this feature because many pregnant women are unaware of potential health risks that could endanger themselves and their babies. Early detection of conditions like hypertension and glucose abnormalities can significantly reduce maternal and infant mortality rates. This model aims to provide a simple yet data-driven prediction tool for pregnant women.
 
-### Dataset Preparation
+## Dataset Preparation 🗂️
 This dataset contains medical records of pregnant women with features such as age, blood pressure, blood sugar levels, body temperature, heart rate, and pregnancy risk levels. This data is used to train the model to predict pregnancy risks based on medical indicators.
 
-### Dataset Details
+## Dataset Details 📝
 The **Maternal Health Risk** dataset consists of 1014 entries with 7 key columns:
 - **Age**: Age of the pregnant woman.  
 - **SystolicBP**: Systolic blood pressure.  
@@ -145,10 +165,10 @@ The **Maternal Health Risk** dataset consists of 1014 entries with 7 key columns
 - **HeartRate**: Heart rate.  
 - **RiskLevel**: Pregnancy risk level (High risk, Low risk, Mid risk).  
 
-### Dataset Source
+## Dataset Source 🌍
 This dataset is from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/863/maternal+health+risk). Thanks to the dataset provider for enabling this model's development.
 
-### Class Distribution
+## Class Distribution 📊
 The dataset contains three categories in **RiskLevel**:
 - **High risk**: High risk.  
 - **Low risk**: Low risk.  
@@ -164,14 +184,14 @@ The class distribution is as follows:
     <img src="Main Quest model (MVP Requirement)/images/datasetdistribution/distribusi_maternal_health_risk.png" alt="Maternal Health Risk Class Distribution" style="width: 80%;"/>
 </div>
 
-# Model Evaluation
+# Model Evaluation 🧪
 <div style="text-align: center;">
     <img src="Main Quest model (MVP Requirement)/images/Model Result/output_model_2.png" style="width: 80%;"/>
 </div>
 
 ---
 
-# Model Results in the Application
+# Model Results in the Application 📲
 
 After the model was saved in TensorFlow Lite (TFLite) format, it was integrated into an Android application to provide real-time predictions. The app receives user inputs and displays prediction results directly on the device screen.
 
@@ -179,7 +199,11 @@ After the model was saved in TensorFlow Lite (TFLite) format, it was integrated 
 
 The first part of the app provides predictions related to Stunting and Wasting, helping parents detect their child's nutritional conditions based on height and weight data.
 
-![Model Prediction Results for Stunting and Wasting](./images/screenshot_apk_result.png)
+<div style="text-align: center;">
+        <h3>Stunting and Wasting Predictions</h3>
+        <p>The app predicts stunting and wasting risks based on gender, age, height and weight data.</p>
+        <img src="Main Quest model (MVP Requirement)/images/Model Result/Hasil analisis data anak.jpg" alt="Stunting and Wasting Results" style="width: 40%; max-width: 500px; height: auto;">
+    </div>
 
 The following image shows how prediction results for Stunting and Wasting are displayed, providing information on whether a child experiences Stunting, Wasting, or Normal conditions based on their height and weight.
 
@@ -190,7 +214,11 @@ The following image shows how prediction results for Stunting and Wasting are di
 
 The second part of the app provides predictions related to Maternal Health Risks, helping pregnant women monitor their health by detecting risky medical conditions such as hypertension, diabetes, and heart problems.
 
-![Model Prediction Results for Maternal Health Risk](./images/screenshot_apk_result.png)
+<div style="text-align: center;">
+        <h3>Stunting and Wasting Predictions</h3>
+        <p>The app predicts maternal health risks, such as hypertension, diabetes, and heart problems.</p>
+        <img src="Main Quest model (MVP Requirement)/images/Model Result/Hasil analisis data ibu.jpg" alt="Stunting and Wasting Results" style="width: 40%; max-width: 500px; height: auto;">
+    </div>
 
 The following image shows how prediction results for Maternal Health Risks are displayed, providing information about the pregnancy risk level based on medical data such as blood pressure, glucose levels, body temperature, and heart rate.
 
@@ -200,19 +228,20 @@ The following image shows how prediction results for Maternal Health Risks are d
 
 ---
 
-# Main Quest (MVP Requirement for Machine Learning) 
-### ✅ Utilize TensorFlow architecture for building machine learning models.
-### ✅ Vertex AI can only be used if you intend to build Generative AI. (Note: Vertex AI is a relatively expensive service, so it's your responsibility to use the provided GCP credits wisely.)
-### ✅ Students are prohibited from using existing models from TensorFlow Hub and similar resources.
-### ✅ Students are prohibited from using models directly from API services such as ChatGPT API, Gemini API, etc.
-### ✅ Using AutoML for creating discriminative AI models is prohibited (Vertex AI is allowed only for Generative AI use cases).
+---
 
-# Side Quest: Domain-Specific Chatbot with Gemini 1.0 Pro 002  
+---
 
-## Introduction  
+# Side Quest: Domain-Specific Chatbot with Gemini 1.0 Pro 002 🤖💬
+
+✅ It is recommended to build two models if you want to model using Vertex AI. First Model: Use TensorFlow to build models from scratch (Transfer Learning is allowed).  Second Model: Use Vertex AI for Generative AI use cases.
+
+✅ It is highly recommended to create your own or do your own fine tuning when solving Generative AI use cases.
+
+## Introduction 📖
 We present a domain-specific chatbot developed through fine-tuning the **Gemini 1.0 Pro 002** base model in Vertex AI Studio. This project leverages the text-to-text generation capabilities of Gemini 1.0 Pro 002 to create a chatbot that can swiftly and accurately address frequently asked questions related to maternal and child health.  
 
-## Why We Chose This Feature  
+## Why We Chose This Feature 🤔
 We identified a common issue with existing doctor consultation platforms: response times are often too long for patients seeking urgent answers.  
 
 <table style="width: 100%;">
@@ -232,7 +261,7 @@ This delay causes discomfort for expectant mothers, new parents, and young mothe
 
 ---
 
-## Fine-Tuning Preparation  
+## Fine-Tuning Preparation ⚙️
 
 ### 1. Preparing the Model  
 We selected the best model from the Model Garden in Vertex AI to support the domain-specific chatbot feature.  
@@ -329,7 +358,7 @@ The processed dataset was stored in a Google Cloud Storage bucket for fine-tunin
 
 ---
 
-## Results  
+## Results 📈
 
 ### Fine-Tuning Metrics  
 During the fine-tuning process, we monitored the metrics:  
@@ -352,11 +381,15 @@ The fine-tuned chatbot successfully answered general questions with high relevan
 
 ---
 
-## Deployment  
+## Deployment 🚀
 After completing the fine-tuning, the `chatbot_gizi_model` was handed over to the **Cloud Computing cohort** team to create an endpoint. This endpoint will serve as the backend for chatbot integration into the application.
 
 --- 
 
-# Side Quest 
-### ✅ It is recommended to build two models if you want to model using Vertex AI. First Model: Use TensorFlow to build models from scratch (Transfer Learning is allowed).  Second Model: Use Vertex AI for Generative AI use cases.
-### ✅ It is highly recommended to create your own or do your own fine tuning when solving Generative AI use cases.
+# Model Results in the Application 📲
+
+
+<div style="text-align: center;">
+        <h3>Chatbot Result in APK</h3>
+        <img src="Side Quest model (finetuning gemini 1.0 in Vertex AI Studio)/images/chatbot_apk.jpg" alt="Stunting and Wasting Results" style="width: 40%; max-width: 500px; height: auto;">
+    </div>
