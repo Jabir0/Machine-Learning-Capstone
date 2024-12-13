@@ -180,7 +180,7 @@ The first part of the app provides predictions related to Stunting and Wasting, 
 <div style="text-align: center;">
         <h3>Stunting and Wasting Predictions</h3>
         <p>The app predicts stunting and wasting risks based on height and weight data.</p>
-        <img src="./images/Model Result/Hasil analisis data anak.jpg" alt="Stunting and Wasting Results" style="width: 80%;">
+        <img src="./images/Model Result/Hasil analisis data anak.jpg" alt="Stunting and Wasting Results" style="width: 50%; max-width: 500px; height: auto;">
     </div>
 
 The following image shows how prediction results for Stunting and Wasting are displayed, providing information on whether a child experiences Stunting, Wasting, or Normal conditions based on their height and weight.
@@ -195,7 +195,7 @@ The second part of the app provides predictions related to Maternal Health Risks
 <div style="text-align: center; margin-top: 20px;">
         <h3>Maternal Health Risk Prediction</h3>
         <p>The app predicts maternal health risks, such as hypertension, diabetes, and heart problems.</p>
-        <img src="./images/Model Result/Hasil analisis data ibu.jpg" alt="Maternal Health Risk Results" style="width: 80%;">
+        <img src="./images/Model Result/Hasil analisis data ibu.jpg" alt="Maternal Health Risk Results" style="width: 50%; max-width: 500px; height: auto;">
     </div>
 
 The following image shows how prediction results for Maternal Health Risks are displayed, providing information about the pregnancy risk level based on medical data such as blood pressure, glucose levels, body temperature, and heart rate.
